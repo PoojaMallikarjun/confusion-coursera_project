@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer(props) {
   return (
     <div className="footer">
       <div className="container">
@@ -16,10 +16,10 @@ function Footer() {
                 <Link to="/aboutus">About</Link>
               </li>
               <li>
-                <Link to="/menu">Menu</Link>
+                <Link to="/Menu">Menu</Link>
               </li>
               <li>
-                <Link to="/contactus">Contact Us</Link>
+                <Link to="/contactus">Contact</Link>
               </li>
             </ul>
           </div>
