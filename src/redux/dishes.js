@@ -5,7 +5,7 @@ export const Dishes = (
   state = {
     isLoading: true,
     errMess: null,
-    dishes: [],
+    dishes: []
   },
   action
 ) => {
@@ -15,7 +15,7 @@ export const Dishes = (
         ...state,
         isLoading: false,
         errMess: null,
-        dishes: action.payload,
+        dishes: action.payload
       };
 
     case ActionTypes.DISHES_LOADING:
@@ -26,7 +26,7 @@ export const Dishes = (
         ...state,
         isLoading: false,
         errMess: action.payload,
-        dishes: [],
+        dishes: []
       };
 
     default:

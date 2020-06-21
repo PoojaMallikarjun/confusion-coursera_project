@@ -5,21 +5,27 @@ import {
   Card,
   CardBody,
   CardHeader,
-  Media,
+  Media
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../shared/baseUrl";
+import { Fade, Stagger } from "react-animation-components";
 
 function RenderLeader(leaders) {
   return leaders.map((leader) => (
-    <Media tag="li" key={leader.id}>
-      <Media left middle>
-        <Media object src={leader.image} />
-      </Media>
-      <Media body className="ml-5">
-        <Media heading>{leader.name}</Media>
-        <p>{leader.description}</p>
-      </Media>
-    </Media>
+    <Stagger in>
+      <Fade in>
+        <Media tag="li" key={leader.id}>
+          <Media left middle>
+            <Media object src={baseUrl + leader.image} />
+          </Media>
+          <Media body className="ml-5">
+            <Media heading>{leader.name}</Media>
+            <p>{leader.description}</p>
+          </Media>
+        </Media>
+      </Fade>
+    </Stagger>
   ));
 }
 
@@ -100,7 +106,7 @@ function About(props) {
           <h2>Corporate Leadership</h2>
         </div>
         <div className="col-12">
-          <Media list>{RenderLeader(props.leaders)}</Media>
+          <Media list>{RenderLeader(props.leaders.leaders)}</Media>
         </div>
       </div>
     </div>

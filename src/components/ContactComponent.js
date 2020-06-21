@@ -5,9 +5,9 @@ import {
   Button,
   Label,
   Row,
-  Col,
+  Col
 } from "reactstrap";
-import { Form, actions, Control, Errors } from "react-redux-form";
+import { Form, Control, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
 
 const required = (val) => val && val.length;
@@ -25,8 +25,8 @@ class Contact extends Component {
   }
 
   handleSubmit(values) {
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    this.props.postFeedback(values);
+
     this.props.resetFeedbackForm();
     // event.preventDefault();
   }
@@ -85,7 +85,7 @@ class Contact extends Component {
               >
                 <i className="fa fa-phone"></i> Call
               </a>
-              <a role="button" className="btn btn-info">
+              <a role="button" className="btn btn-info" href="skype">
                 <i className="fa fa-skype"></i> Skype
               </a>
               <a
@@ -121,7 +121,7 @@ class Contact extends Component {
                     validators={{
                       required,
                       minLength: minLength(3),
-                      maxLength: maxLength(15),
+                      maxLength: maxLength(15)
                     }}
                   />
                   <Errors
@@ -131,7 +131,7 @@ class Contact extends Component {
                     messages={{
                       required: "Required",
                       minLength: "Must be greater than 2 characters",
-                      maxLength: "Must be 15 characters or less",
+                      maxLength: "Must be 15 characters or less"
                     }}
                   />
                 </Col>
@@ -150,7 +150,7 @@ class Contact extends Component {
                     validators={{
                       required,
                       minLength: minLength(3),
-                      maxLength: maxLength(15),
+                      maxLength: maxLength(15)
                     }}
                   />
                   <Errors
@@ -160,7 +160,7 @@ class Contact extends Component {
                     messages={{
                       required: "Required",
                       minLength: "Must be greater than 2 characters",
-                      maxLength: "Must be 15 characters or less",
+                      maxLength: "Must be 15 characters or less"
                     }}
                   />
                 </Col>
@@ -180,7 +180,7 @@ class Contact extends Component {
                       required,
                       minLength: minLength(3),
                       maxLength: maxLength(15),
-                      isNumber,
+                      isNumber
                     }}
                   />
                   <Errors
@@ -191,7 +191,7 @@ class Contact extends Component {
                       required: "Required",
                       minLength: "Must be greater than 2 numbers",
                       maxLength: "Must be 15 numbers or less",
-                      isNumber: "Must be a number",
+                      isNumber: "Must be a number"
                     }}
                   />
                 </Col>
@@ -209,7 +209,7 @@ class Contact extends Component {
                     className="form-control"
                     validators={{
                       required,
-                      validEmail,
+                      validEmail
                     }}
                   />
                   <Errors
@@ -218,7 +218,7 @@ class Contact extends Component {
                     show="touched"
                     messages={{
                       required: "Required",
-                      validEmail: "Invalid Email Address",
+                      validEmail: "Invalid Email Address"
                     }}
                   />
                 </Col>
